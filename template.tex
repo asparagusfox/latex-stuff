@@ -4,6 +4,10 @@
 \usepackage[backend=biber]{biblatex}
 \addbibresource{/home/axel/Documents/bibliography/uni.bib}
 
+% Some assignments use Question n as headings with alphabetized subsection numbering
+\renewcommand{\thesection}{Question \arabic{section}}
+\renewcommand{\thesubsection}{\alph{subsection}.}
+
 \title{}
 \author{}
 \date{}
