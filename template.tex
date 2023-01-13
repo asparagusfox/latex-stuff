@@ -1,7 +1,13 @@
 \documentclass{article}
 
+% Use texcount for word count
+
+% Format things Britishly
+\usepackage{csquotes}
+\usepackage[british]{babel}
+
 % Use biber to generate bibliography
-\usepackage[backend=biber]{biblatex}
+\usepackage[backend=biber,urldate=long]{biblatex}
 \addbibresource{/home/axel/Documents/bibliography/uni.bib}
 
 % Some assignments use Question n as headings with alphabetized subsection numbering
@@ -12,9 +18,38 @@
 \usepackage{graphicx}
 \graphicspath{ {$path} }
 
+% For named colours
+\usepackage{xcolor}
+
+% Glossaries, also add it to the table of contents and enable acronym feature too
+% use makeglossaries to make the glossaries (and acronyms)
+\usepackage[toc,acronym]{glossaries}
+
 \title{}
 \author{}
 \date{}
+
+% Adds hyperlinks to any references in the pdf output, also colour them. This should be added last for some reason
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
+
+% Glossary and acronyms
+\makeglossaries
+
+\newglossaryentry{example}
+{
+  name=example,
+  description={this is an example. A full stop is automatically put at the end}
+}
+
+\newacronym{nameforreference}{acrshort}{acrlong}
 
 \begin{document}
 \maketitle
